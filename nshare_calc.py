@@ -37,12 +37,7 @@ def optimize(total, p, w):
     # Convert result to numpy array
     n = np.array([n[i].varValue for i in range(N)])
 
-    # Print the optimal solution
-    print("Optimal Solution:")
-    print(n)
-    print("Total difference =", pulp.value(problem.objective))
-
-    return 0
+    return n
 
 if __name__ == "__main__":
     # params
@@ -51,4 +46,9 @@ if __name__ == "__main__":
     p = [6, 5.5]
     w = [0.6, 0.4]
 
-    optimize(N, total, p, w)
+    n = optimize(total, p, w)
+
+    # Print the optimal solution
+    print("Optimal Solution:")
+    print(n)
+    #print("Total difference =", pulp.value(problem.objective))
