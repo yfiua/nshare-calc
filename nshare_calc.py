@@ -14,7 +14,7 @@ def optimize(total, p, w):
     w = w / np.sum(w)
 
     # Define the problem as a minimization problem
-    problem = pulp.LpProblem("Minimize total difference", pulp.LpMinimize)
+    problem = pulp.LpProblem("nshare_calc", pulp.LpMinimize)
 
     # Define decision variables
     t = pulp.LpVariable.dicts('t', range(N), cat='Continuous')
