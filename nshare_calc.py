@@ -29,7 +29,7 @@ def optimize(total, p, w):
         problem += t[i] >= p[i] * n[i] - total * w[i]
         problem += t[i] >= total * w[i] - p[i] * n[i]
 
-    problem += pulp.lpDot(p, n) <= total
+    problem += pulp.lpSum([p[i] * n[i] for i in range(N)]) <= total
 
     # Solve the problem
     status = problem.solve()
