@@ -29,10 +29,10 @@ def optimize(total, p, w):
         problem += t[i] >= p[i] * n[i] - total * w[i]
         problem += t[i] >= total * w[i] - p[i] * n[i]
 
-    problem += pulp.lpSum([p[i] * n[i] for i in range(N)]) <= total
+    problem += pulp.lpDot(p, n.values()) <= total
 
     # Solve the problem
-    status = problem.solve()
+    status = problem.solve(pulp.PULP_CBC_CMD(msg=0))
 
     # Convert result to numpy array
     n = np.array([n[i].varValue for i in range(N)])
