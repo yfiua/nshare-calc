@@ -11,18 +11,18 @@ Given a portfolio with total asset $S$, price vector $\mathbf p$ and weight vect
 ## Installation
 
 ```
-    pip install git+https://github.com/yfiua/nshare_calc
+pip install git+https://github.com/yfiua/nshare_calc
 ```
 
 ## Usage
 
 ```
-    from nshare_calc import calc_n
+from nshare_calc import calc_n
 
-    # params
-    S = 100
-    p = [6, 5.5]
-    w = [0.6, 0.4]         # w will be automatically normalized
+# params
+S = 100
+p = [6, 5.5]
+w = [0.6, 0.4]         # w will be automatically normalized
 
-    n = calc_n(S, p, w)    # Result: n = [10.  7.]
+n = calc_n(S, p, w)    # Result: n = [10.  7.]
 ```
