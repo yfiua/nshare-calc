@@ -3,8 +3,8 @@ requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "nshare_calc"
-version = "0.1.0"
+name = "nshare-calc"
+version = "0.1.1"
 authors = [
   { name="Yfiua", email="yfiua6@gmail.com" },
 ]
@@ -19,8 +19,8 @@ classifiers = [
 dynamic = ["dependencies"]
 
 [project.urls]
-"Homepage" = "https://github.com/yfiua/nshare_calc"
-"Bug Tracker" = "https://github.com/yfiua/nshare_calc/issues"
+"Homepage" = "https://github.com/yfiua/nshare-calc"
+"Bug Tracker" = "https://github.com/yfiua/nshare-calc/issues"
 
 [tool.setuptools.dynamic]
 dependencies = {file = ["requirements.txt"]}

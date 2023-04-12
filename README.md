@@ -1,4 +1,4 @@
-# nshare_calc
+# nshare-calc
 Python library for calculating the optimal number of shares given a portfolio using integer programming.
 
 ## Problem statement
@@ -11,7 +11,7 @@ Given a portfolio with total asset $S$, price vector $\mathbf p$ and weight vect
 ## Installation
 
 ```
-pip install git+https://github.com/yfiua/nshare_calc
+pip install nshare-calc
 ```
 
 ## Usage
