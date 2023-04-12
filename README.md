@@ -1,5 +1,5 @@
 # nshare_calc
-Calculating the number of shares using integer programming.
+Python library for calculating the optimal number of shares given a portfolio using integer programming.
 
 ## Problem statement
 
