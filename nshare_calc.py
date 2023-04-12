@@ -3,7 +3,7 @@
 import pulp
 import numpy as np
 
-def optimize(total, p, w):
+def calc_n(S, p, w):
     # Sanity
     N = len(p)
     if N != len(w):
@@ -26,10 +26,10 @@ def optimize(total, p, w):
     # Define the constraints
     # https://math.stackexchange.com/questions/1954992/linear-programming-minimizing-absolute-values-and-formulate-in-lp
     for i in range(N):
-        problem += t[i] >= p[i] * n[i] - total * w[i]
-        problem += t[i] >= total * w[i] - p[i] * n[i]
+        problem += t[i] >= p[i] * n[i] - S * w[i]
+        problem += t[i] >= S * w[i] - p[i] * n[i]
 
-    problem += pulp.lpDot(p, n.values()) <= total
+    problem += pulp.lpDot(p, n.values()) <= S
 
     # Solve the problem
     status = problem.solve(pulp.PULP_CBC_CMD(msg=0))
@@ -38,17 +38,3 @@ def optimize(total, p, w):
     n = np.array([n[i].varValue for i in range(N)])
 
     return n
-
-if __name__ == "__main__":
-    # params
-    N = 2
-    total = 100
-    p = [6, 5.5]
-    w = [0.6, 0.4]
-
-    n = optimize(total, p, w)
-
-    # Print the optimal solution
-    print("Optimal Solution:")
-    print(n)
-    #print("Total difference =", pulp.value(problem.objective))
